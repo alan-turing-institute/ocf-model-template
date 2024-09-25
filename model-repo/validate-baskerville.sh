@@ -14,7 +14,7 @@ module purge
 module restore system
 module load bask-apps/live
 module load Python/3.11.3-GCCcore-12.3.0
-cd /bask/projects/v/vjgo8416-climate/shared/
+cd /bask/projects/v/vjgo8416-climate/shared/cloudcasting-validation
 
 # check if repo exists
 if [ ! -d "{{ repo_name }}" ]; then

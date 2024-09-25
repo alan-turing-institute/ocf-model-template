@@ -23,7 +23,7 @@ model_name:
     {% endif %}
   default: "MyModel"
 
-  python_package_name:
-    type: str
-    default: "{{ repo_name | replace('-', '_') }}"
-    when: false
+python_package_name:
+  type: str
+  default: "{{ repo_name | replace('-', '_') }}"
+  when: false
