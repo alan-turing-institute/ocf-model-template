@@ -17,7 +17,7 @@ It uses [`cloudcasting`](https://github.com/alan-turing-institute/cloudcasting) 
 3. Run the following command to create a new model repository:
    ```bash
    copier copy gh:alan-turing-institute/ocf-model-template .
-  ```
+   ```
 
 4. Answer the questions asked by copier:
    - What is the name of your model repository?
