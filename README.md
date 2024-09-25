@@ -33,6 +33,7 @@ It uses [`cloudcasting`](https://github.com/alan-turing-institute/cloudcasting) 
   git add --all
   git commit -m "Initial commit"
   git push -u origin main
+  ```
 
 6. Edit the files in your model repository:
     - Edit `model.py` to define your model class.
