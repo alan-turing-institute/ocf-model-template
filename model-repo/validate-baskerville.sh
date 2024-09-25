@@ -15,6 +15,7 @@ module restore system
 module load bask-apps/live
 module load Python/3.11.3-GCCcore-12.3.0
 cd /bask/projects/v/vjgo8416-climate/shared/
+
 # check if repo exists
 if [ ! -d "{{ repo_name }}" ]; then
     echo "Repo does not exist; cloning..."
@@ -29,6 +30,7 @@ if [ ! -d ".venv" ]; then
 fi
 source .venv/bin/activate
 pip install -e .
+
 # upgrade jax to run metrics on GPU
 pip install --upgrade "jax[cuda12]"
 
