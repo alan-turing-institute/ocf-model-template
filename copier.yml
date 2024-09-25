@@ -1,0 +1,29 @@
+# CONFIGURATION -------------------------
+_subdirectory: model-repo
+_templates_suffix: ""
+_skip_if_exists:
+  - CHANGELOG.md
+
+# PROMPT --------------------------------
+repo_name:
+  type: str
+  help: What is the name of your model repository? (no spaces or underscores!)
+  validator: >-
+    {% if not (repo_name | regex_search('^[a-zA-Z0-9\-]+$')) %}
+    Repository name must be alphanumeric, with dashes and no underscores/spaces.
+    {% endif %}
+  default: "my-model"
+
+model_name:
+  type: str
+  help: To validate your model, you will need to write a model class in `model.py`. What should it be called? (Please write one word in CamelCase, e.g. OpticalFlowModel).
+  validator: >-
+    {% if not (model_name | regex_search('^[A-Z][a-zA-Z0-9]+$')) %}
+    Model name must be one CamelCase word, e.g. OpticalFlowModel.
+    {% endif %}
+  default: "MyModel"
+
+  python_package_name:
+    type: str
+    default: "{{ repo_name | replace('-', '_') }}"
+    when: false
