@@ -23,6 +23,9 @@ if [ ! -d "{{ repo_name }}" ]; then
 fi
 cd {{ repo_name }}
 
+# ensure that we have the latest changes
+git pull
+
 # create virtual environment if it doesn't exist
 if [ ! -d ".venv" ]; then
     echo "Virtual environment does not exist; creating..."
