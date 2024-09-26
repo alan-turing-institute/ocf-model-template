@@ -16,6 +16,9 @@ module load bask-apps/live
 module load Python/3.11.3-GCCcore-12.3.0
 cd /bask/projects/v/vjgo8416-climate/shared/cloudcasting-validation
 
+# set wandb credentials
+export WANDB_API_KEY=your_wandb_api_key
+
 # check if repo exists
 if [ ! -d "{{ repo_name }}" ]; then
     echo "Repo does not exist; cloning..."
