@@ -7,7 +7,6 @@
 #SBATCH --gpus 1
 #SBATCH --cpus-per-gpu 36
 #SBATCH --time 45:00:00
-#SBATCH --job-name {{ model_name }}-validation
 
 # drop into baskerville
 module purge
@@ -41,4 +40,4 @@ pip install -e .
 pip install --upgrade "jax[cuda12]"
 
 # run validation
-cloudcasting validate
+cloudcasting validate --config-file="validate_config.yml" --model-file=$1
