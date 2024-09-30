@@ -16,7 +16,7 @@ repo_name:
 
 model_name:
   type: str
-  help: To validate your model, you will need to write a model class in `model.py`. What should it be called? (Please write one word in CamelCase, e.g. OpticalFlowModel).
+  help: To validate your model, you will need to write a model class in the models folder. What should it be called? (Please write one word in CamelCase, e.g. OpticalFlowModel). Note that you can add multiple models to the same repository later!
   validator: >-
     {% if not (model_name | regex_search('^[A-Z][a-zA-Z0-9]+$')) %}
     Model name must be one CamelCase word, e.g. OpticalFlowModel.

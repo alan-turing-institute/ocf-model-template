@@ -1,12 +1,16 @@
-model:
-  name: "{{ model_name }}"
-  params:
-    history_steps: 1
-    example_parameter: 1
+models:
+  - name: "{{ model_name }}"
+    params:
+      history_steps: 1
+      example_parameter: 1
+  - name: "{{ model_name }}2"
+    params:
+      history_steps: 1
+      example_parameter: 2
 validation:
   data_path: "/bask/projects/v/vjgo8416-climate/shared/data/eumetsat/testing2022/2022_test_nonhrv.zarr"
   wandb_project_name: "cloudcasting"
   wandb_run_name: "{{ model_name }}-validation"
   nan_to_num: False
-  batch_size: 2
-  num_workers: 0
+  batch_size: 32
+  num_workers: 36 
